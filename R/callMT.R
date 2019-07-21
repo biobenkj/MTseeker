@@ -126,7 +126,7 @@ callMTVars <- function(BAM, SIZE=75, GENOME="rCRS", CHR="chrM", COV=NULL,
   if (verbose) message("QA'ing variants...") 
   QAed <- qaVariants(tallied)
   if (verbose) message("Calling ", BAM, " vars against ", GENOME, "...")
-  filters <- VariantCallingFilters(read.count = 40L,
+  filters <- VariantCallingFilters(read.count = 2L,
                                    p.lower = 0.2,
                                    p.error = 1/1000)
   res <- callVariants(QAed, calling.filters=filters)
